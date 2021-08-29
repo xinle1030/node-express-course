@@ -5,10 +5,11 @@ const { readFile, writeFile } = require('fs').promises
 
 const start = async () => {
   try {
-    const first = await readFile('./content/first.txt', 'utf8')
-    const second = await readFile('./content/second.txt', 'utf8')
+    const first = await readFile('./01-node-tutorial/content/first.txt', 'utf8')
+    const second = await readFile('./01-node-tutorial/content/second.txt', 'utf8')
+    console.log("first task");
     await writeFile(
-      './content/result-mind-grenade.txt',
+      './01-node-tutorial/content/result-mind-grenade.txt',
       `THIS IS AWESOME : ${first} ${second}`,
       { flag: 'a' }
     )
@@ -31,6 +32,6 @@ start()
 //     })
 //   })
 // }
-// getText('./content/first.txt')
+// getText('./01-node-tutorial/content/first.txt')
 //   .then((result) => console.log(result))
 //   .catch((err) => console.log(err))
