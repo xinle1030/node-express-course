@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const people = require('../routes/people')  // people router
+const people = require('../routes/new_people')  // people router
 const auth = require('../routes/auth')      // login router
 
 // static assets

@@ -4,6 +4,7 @@ const path = require('path')
 const app = express()
 
 // setup static and middleware
+// can just dump all html, css and js to public directory, it will still get displayed
 app.use(express.static('./public'))
 
 // app.get('/', (req, res) => {

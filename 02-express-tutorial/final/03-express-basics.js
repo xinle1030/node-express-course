@@ -3,6 +3,7 @@ const app = express()
 
 app.get('/', (req, res) => {
   console.log('user hit the resource')
+  // send the status code also 
   res.status(200).send('Home Page')
 })
 
@@ -10,6 +11,7 @@ app.get('/about', (req, res) => {
   res.status(200).send('About Page')
 })
 
+// default response
 app.all('*', (req, res) => {
   res.status(404).send('<h1>resource not found</h1>')
 })

@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
-let { people } = require('./data')
+let { people} = require('../data')
 
-// static assets
-app.use(express.static('./methods-public'))
+// static assets, use all the static assets in methods-public folder
+app.use(express.static('../methods-public'))
 // parse form data
 app.use(express.urlencoded({ extended: false }))
-// parse json
+// parse json (handle the incoming json data)
 app.use(express.json())
 
 app.get('/api/people', (req, res) => {
@@ -20,10 +20,11 @@ app.post('/api/people', (req, res) => {
       .status(400)
       .json({ success: false, msg: 'please provide name value' })
   }
+  // if post is successful, the status code is 201
   res.status(201).json({ success: true, person: name })
 })
 
-app.post('/api/postman/people', (req, res) => {
+app.post('/api/people/postman', (req, res) => {
   const { name } = req.body
   if (!name) {
     return res
